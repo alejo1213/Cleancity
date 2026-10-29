@@ -42,9 +42,6 @@ de residuos mediante una aplicación web.
 - Reportes de residuos.
 - Gestión de ubicaciones.
 
-Nota: documentar únicamente las funcionalidades
-que estén implementadas en la versión entregada.
-
 ## Requisitos
 - Node.js en una versión compatible con el proyecto.
 - npm.

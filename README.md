@@ -72,7 +72,7 @@ y la integración de cambios. Las ramas feature permiten
 trabajar en funcionalidades específicas.
 
 ## Autor
-Alejandro Parra Valencia
+Alejandro Parrita
 
 ## Estado
 Proyecto académico en desarrollo - SENA.

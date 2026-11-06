@@ -1,5 +1,6 @@
 
-function Header({ mostrarUsuario, mostrarUbicacion, mostrarAtencionUsuario}) {
+function Header({ mostrarInicio, mostrarUsuario, mostrarUbicacion, mostrarAtencionUsuario }) {
+  // mostrarInicio es nueva: es la función que App le entrega para cambiar a la vista "inicio"
   return (
     <header className="header">
       <div className="logo">
@@ -7,7 +8,11 @@ function Header({ mostrarUsuario, mostrarUbicacion, mostrarAtencionUsuario}) {
       </div>
 
       <nav>
-        <a href="#">Inicio</a>
+        {/* Antes era <a href="#">Inicio</a>. Ahora es un botón que llama a mostrarInicio */}
+        <button onClick={mostrarInicio}>
+          Inicio
+        </button>
+
         <a href="#">Recoleccion</a>
 
         <button onClick={mostrarUsuario}>
@@ -17,11 +22,10 @@ function Header({ mostrarUsuario, mostrarUbicacion, mostrarAtencionUsuario}) {
         <button onClick={mostrarUbicacion}>
           Ubicación
         </button>
-        
-         <button onClick={mostrarAtencionUsuario}>
+
+        <button onClick={mostrarAtencionUsuario}>
           Atencion al Cliente
         </button>
-
       </nav>
     </header>
   );

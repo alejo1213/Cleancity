@@ -1,0 +1,126 @@
+/* ============================================================
+   Inicio.css — estilos del componente <Inicio />
+   Se importa dentro de Inicio.jsx con: import "./Inicio.css";
+   ============================================================ */
+
+/* 1. VARIABLES: cambia aquí la paleta de todo el componente.
+      Están dentro de .inicio para no afectar al resto de tu app. */
+.inicio {
+  --teal: #0b7a99;
+  --teal-soft: #e6f2f6;
+  --green: #16a34a;
+  --green-soft: #dcf5e4;
+  --red: #e11d2e;
+  --red-soft: #fde4e6;
+  --amber: #e08a00;
+  --amber-soft: #fff0d6;
+  --ink: #111418;
+  --muted: #5d6670;
+  --line: #dfe3e8;
+  --bg-side: #f4f4f5;
+  --radius: 14px;
+
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  font-size: 14px;
+  /* Estructura: barra lateral (230px) + contenido */
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  min-height: 100vh;
+}
+/* Reset solo dentro del componente */
+.inicio *, .inicio *::before, .inicio *::after { box-sizing: border-box; margin: 0; }
+.inicio button { font: inherit; cursor: pointer; }
+.inicio :focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.inicio .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* 2. BARRA LATERAL */
+.inicio .sidebar { background: var(--bg-side); padding: 24px 14px; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; }
+.inicio .logo { font-size: 22px; font-weight: 700; padding: 0 10px 28px; color: var(--teal); }
+.inicio .logo span { color: var(--green); }
+.inicio .menu { list-style: none; padding: 0; display: grid; gap: 6px; }
+.inicio .menu a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; color: var(--ink); text-decoration: none; font-weight: 500; }
+.inicio .menu a:hover { background: #e9eaec; }
+.inicio .menu a.active { background: var(--teal-soft); color: var(--teal); }
+.inicio .profile { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 10px; }
+.inicio .profile small { color: var(--muted); display: block; }
+.inicio .avatar { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; font-size: 13px; color: #fff; flex: none; }
+
+/* 3. CONTENIDO PRINCIPAL */
+.inicio .main { padding: 24px 32px 40px; max-width: 1200px; }
+.inicio .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 32px; }
+.inicio .search { position: relative; width: 100%; max-width: 330px; }
+.inicio .search input { width: 100%; padding: 11px 14px 11px 38px; border: 0; border-radius: 10px; background: #f1f1f2; font: inherit; }
+.inicio .search .icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+.inicio .top-actions { display: flex; gap: 8px; }
+.inicio .icon-btn { background: none; border: 0; padding: 8px; border-radius: 8px; position: relative; color: var(--ink); }
+.inicio .icon-btn:hover { background: #f1f1f2; }
+.inicio .icon-btn .icon { width: 22px; height: 22px; }
+.inicio .dot { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; background: var(--teal); border-radius: 50%; }
+.inicio .greeting h1 { font-size: 26px; font-weight: 700; }
+.inicio .greeting p { color: var(--muted); margin-top: 2px; }
+
+/* 4. TARJETAS DE RESUMEN (4 columnas iguales) */
+.inicio .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+.inicio .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: flex; flex-direction: column; gap: 14px; }
+.inicio .stat-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.inicio .stat-head .label { font-size: 12.5px; font-weight: 500; }
+.inicio .stat-head .value { font-size: 28px; font-weight: 700; margin-top: 6px; }
+.inicio .stat-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; }
+.inicio .stat-icon .icon { width: 22px; height: 22px; }
+.inicio .stat p { color: var(--muted); font-size: 12.5px; line-height: 1.4; }
+/* Color según el tipo de residuo (la clase la pone el componente) */
+.inicio .reciclable .label, .inicio .reciclable .value { color: var(--teal); }
+.inicio .reciclable .stat-icon { background: var(--teal-soft); color: var(--teal); }
+.inicio .organico .label, .inicio .organico .value { color: var(--green); }
+.inicio .organico .stat-icon { background: var(--green-soft); color: var(--green); }
+.inicio .peligroso .label, .inicio .peligroso .value { color: var(--red); }
+.inicio .peligroso .stat-icon { background: var(--red-soft); color: var(--red); }
+.inicio .general .stat-icon { background: #f1f1f2; }
+
+/* 5. PANELES */
+.inicio .panels { display: grid; grid-template-columns: 1.9fr 1fr; gap: 20px; align-items: start; }
+.inicio .panel { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.inicio .panel-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.inicio .panel h2 { font-size: 18px; font-weight: 600; }
+.inicio .panel-actions { display: flex; gap: 10px; }
+.inicio .btn { padding: 9px 16px; border-radius: 8px; font-weight: 600; font-size: 13px; border: 1.5px solid var(--teal); }
+.inicio .btn-primary { background: var(--teal); color: #fff; }
+.inicio .btn-primary:hover { background: #09627c; }
+.inicio .btn-outline { background: #fff; color: var(--teal); }
+.inicio .btn-outline:hover { background: var(--teal-soft); }
+.inicio .tabs { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; padding: 3px; margin: 20px 0 12px; background: #f6f8fa; }
+.inicio .tab { border: 0; background: none; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 500; color: var(--teal); }
+.inicio .tab[aria-selected="true"] { background: #fff; color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+.inicio .table-wrap { overflow-x: auto; }
+.inicio table { width: 100%; border-collapse: collapse; min-width: 520px; }
+.inicio th { text-align: left; font-size: 12.5px; font-weight: 500; color: var(--teal); padding: 10px 8px; border-bottom: 1px solid var(--line); }
+.inicio td { padding: 16px 8px; border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 500; }
+.inicio tr:last-child td { border-bottom: 0; }
+.inicio .badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 6px; font-size: 12px; font-weight: 500; }
+.inicio .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.inicio .badge.pendiente { background: var(--amber-soft); color: var(--amber); }
+.inicio .badge.recogido  { background: var(--green-soft);  color: var(--green); }
+.inicio .badge.cancelado { background: var(--red-soft);    color: var(--red); }
+.inicio .sub { display: flex; justify-content: space-between; margin: 18px 0 14px; font-size: 12.5px; color: var(--muted); }
+.inicio .sub a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.inicio .feed { list-style: none; padding: 0; display: grid; gap: 18px; }
+.inicio .feed li { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.4; }
+.inicio .feed time { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+
+/* 6. RESPONSIVE */
+@media (max-width: 1000px) {
+  .inicio .stats { grid-template-columns: repeat(2, 1fr); }
+  .inicio .panels { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .inicio { grid-template-columns: 1fr; }
+  .inicio .sidebar { position: static; height: auto; padding: 12px; }
+  .inicio .logo { padding-bottom: 8px; }
+  .inicio .menu { grid-auto-flow: column; overflow-x: auto; }
+  .inicio .menu a { white-space: nowrap; }
+  .inicio .profile { display: none; }
+  .inicio .main { padding: 20px 16px 32px; }
+}
+@media (max-width: 480px) { .inicio .stats { grid-template-columns: 1fr; } }

@@ -74,7 +74,7 @@ function AtencionUsuario() {
             value={correo}
             onChange={(event) => {
               setCorreo(event.target.value);
-              setError(""); // 🔴 VALIDACIÓN: borra el error al corregir.
+              setError(""); //  borra el error al corregir.
             }}
             placeholder="ejemplo@correo.com"
             required
@@ -99,14 +99,14 @@ function AtencionUsuario() {
             value={mensaje}
             onChange={(event) => {
               setMensaje(event.target.value);
-              setError(""); // 🔴 VALIDACIÓN: borra el error al corregir.
+              setError(""); 
             }}
             placeholder="Cuéntanos cómo podemos ayudarte..."
             rows="5"
             required
           />
 
-          {/* 🔴 VALIDACIÓN NUEVA: muestra el error cuando existe. */}
+          {/*  muestra el error cuando existe. */}
           {error && (
             <p role="alert" style={{ color: "red" }}>
               {error}
